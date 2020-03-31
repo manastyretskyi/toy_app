@@ -10,10 +10,12 @@
   <%= @user.email %>
 </p>
 
+<% unless @user.microposts.first.nil? %>
 <h3>Last micropost </h3>
 <div style="border: 1px solid black;">
   <%= render @user.microposts.first %>
   <%= link_to "View", @user.microposts.first %>
 </div>
+<% end %>
 <%= link_to 'Edit', edit_user_path(@user) %> |
 <%= link_to 'Back', users_path %>
